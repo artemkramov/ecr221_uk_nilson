@@ -1,0 +1,52 @@
+body {
+    padding-bottom: 15px;
+}
+.loading {
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {100% { -webkit-transform: rotate(359deg); }}
+@keyframes spin {100% {  transform: rotate(359deg); }}
+
+a img:hover {-webkit-transform: scale(1.05);transform: scale(1.05);}
+a img:active {-webkit-transform: scale(1);transform: scale(1);}
+
+@media (max-width: 767px) {
+    .affix {
+        position: static;
+        width: auto;
+        top: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .affix-top {
+        position: fixed;
+        top: 0px;
+    }
+}
+
+.table-status {
+    margin-top: 20px;
+}
+.error-block {
+    margin-top: 15px;
+}
+#file-import {
+    margin-bottom: 15px;
+}
+.btn-import-stop {
+    margin-bottom: 15px;
+}
+#export-filename {
+    max-width: 400px;
+}
+.backgrid-pagination-cell {
+    display: table-cell !important;
+}
+.backup-delimiter {
+    max-width: 60px;
+}
+.nav-stacked.static {
+    position: static;
+}
