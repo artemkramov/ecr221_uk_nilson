@@ -157,7 +157,14 @@
       "FN": "ФН",
       "Datetime": "Время",
       "Send documents count": "Количество непереданных пакетов",
-      "Personalization date": "Дата персонализации"
+      "Personalization date": "Дата персонализации",
+      "You have already registered in the system": "Вы уже зарегистрированы в системе",
+      "Unreachable device": "Ошибка в доступе к устройству",
+      "Unreachable API": "Ошибка регистрации",
+      "The device was registered successfully": "Устройство успешно зарегистрировано в системе",
+      "Registration": "Регистрация",
+      "Client ID": "ID клиента",
+      "Change password": "Смена пароля"
     }
   },
   "uk": {
@@ -318,7 +325,14 @@
       "FN": "ФН",
       "Datetime": "Час",
       "Send documents count": "Кількість непереданих пакетів",
-      "Personalization date": "Дата персоналізації"
+      "Personalization date": "Дата персоналізації",
+      "You have already registered in the system": "Ви вже зареєстровані в системі",
+      "Unreachable device": "Помилка в доступі до пристрою",
+      "Unreachable API": "Помилка реєстрації",
+      "The device was registered successfully": "Пристрій успішно зареєстровано в системі",
+      "Registration": "Реєстрація",
+      "Client ID": "ID клієнта",
+      "Change password": "Зміна пароля"
     }
   }
 }

@@ -280,6 +280,7 @@
     </div>
     <div class="form-group" id="date-group">
         <label for="d" class="col-sm-2 control-label"><%= t("Datetime") %></label>
+
         <div class="col-sm-10">
             <input type="text" class="form-control form-datetime" id="d" placeholder="DD-MM-YYYY H:I:S">
         </div>
@@ -341,6 +342,50 @@
     </div>
 </script>
 
+<script type="text/template" id="nilson-block">
+    <div class="container">
+        <div class="row">
+
+            <div id="sidebar-left"></div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <!-- REGISTRATION BLOCK -->
+                    <div class="col-sm-12">
+                        <div id="registration"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="nilson-registration-block">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <%= t("Registration") %>
+        </div>
+        <div class="panel-body">
+            <% if (isSignedUp) { %>
+            <%= notificationHTML %>
+            <% } %>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="registration-client-id"><%= t("Client ID") %>:</label>
+                    <input type="text" class="form-control" required id="registration-client-id" value=""/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" data-loading-text="<%= t("Wait...") %>" class="btn btn-danger" id="registration-submit">
+                        <%= isSignedUp ? t("Change password") : t("Registration") %>
+                    </button>
+                </div>
+            </form>
+            <div class="error-block"></div>
+        </div>
+    </div>
+</script>
+
 <script type="text/template" id="backup-block">
     <div class="container">
         <div class="row">
@@ -367,6 +412,7 @@
     </div>
 </script>
 
+
 <script type="text/template" id="backup-export-block">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
@@ -383,7 +429,8 @@
             </div>
             <div class="form-group">
                 <label><%= t("Delimiter") %></label>
-                <input type="text" class="form-control backup-delimiter" maxlength="1" id="export-delimiter" value="<%= exportDelimiter %>"/>
+                <input type="text" class="form-control backup-delimiter" maxlength="1" id="export-delimiter"
+                       value="<%= exportDelimiter %>"/>
             </div>
             <div class="form-group">
                 <label><%= t("Backup file name") %></label>
@@ -438,9 +485,11 @@
         <div class="panel-body">
             <label><%= t("Choose an archive to import") %></label>
             <input type="file" accept=".zip" id="file-import">
+
             <div class="form-group">
                 <label><%= t("Delimiter") %></label>
-                <input type="text" class="form-control backup-delimiter" maxlength="1" id="import-delimiter" value="<%= importDelimiter %>"/>
+                <input type="text" class="form-control backup-delimiter" maxlength="1" id="import-delimiter"
+                       value="<%= importDelimiter %>"/>
             </div>
             <button type="button" class="btn btn-danger btn-import-run" disabled="true">
                 <%= t("Import") %>

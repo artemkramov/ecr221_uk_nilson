@@ -151,6 +151,10 @@ Name=js/backup.js
 File=main/backup.js;
 Content-Type=application/javascript
 
+Name=js/nilson.js
+File=main/nilson.js;
+Content-Type=application/javascript
+
 Name=js/FileSaver.min.js
 File=js/FileSaver.min.js
 Content-Type=application/javascript
@@ -199,6 +203,10 @@ Content-Type=image/png
 
 Name=img/backup-h.png
 File=img/backup-h.png
+Content-Type=image/png
+
+Name=img/gift-h.png
+File=img/gift-h.png
 Content-Type=image/png
 
 Name=img/network-h.png

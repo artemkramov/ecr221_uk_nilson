@@ -17,18 +17,18 @@
 <div id="logPlace"></div>
 <div id="content" class="container"></div>
 <div id="modalDialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialogLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 id="dialogLabel" class="modal-title"></h4>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="dialogLabel" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+            </div>
         </div>
     </div>
-</div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/sprintf/1.0.2/sprintf.min.js"></script>
@@ -46,11 +46,13 @@
 
 <!--script src="/js/main.js"></script-->
 <script type="text/javascript">
-    $('#lnb').load('tmpl.html',function(){
-        $.getScript('/js/main.js?v=' + (new Date().getTime()),function(){
-            $.getScript('/js/backup.js?v=' + (new Date().getTime()),function() {
-                $(function () {
-                    appStart();
+    $('#lnb').load('tmpl.html', function () {
+        $.getScript('/js/main.js?v=' + (new Date().getTime()), function () {
+            $.getScript('/js/backup.js?v=' + (new Date().getTime()), function () {
+                $.getScript('/js/nilson.js?v=' + (new Date().getTime()), function () {
+                    $(function () {
+                        appStart();
+                    });
                 });
             });
         });

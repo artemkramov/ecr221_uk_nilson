@@ -14,7 +14,8 @@ var AppRouter = Backbone.Router.extend({
 		"fm(/:page)":      'fisc',
 		"logo":            'logoScr',
 		"report":          'repScr',
-		"backup":          'backupScr'
+		"backup":          'backupScr',
+		"nilson":          'nilsonScr'
 	},
 	execute: function (callback, args) {
 		if (this.view) {
@@ -105,6 +106,9 @@ var AppRouter = Backbone.Router.extend({
 	},
 	backupScr:  function (page) {
 		this.view = new BackupScreenView();
+	},
+	nilsonScr: function() {
+		this.view = new NilsonView();
 	}
 });
 
@@ -159,7 +163,8 @@ var appStart = function () {
 		}),
 		new MainCell({model: new Backbone.Model({lnk: '#modem/state', img: 'modem', name: 'Modem'})}),
 		new MainCell({model: new Backbone.Model({lnk: '#report', img: 'sales', name: 'Reports'})}),
-		new MainCell({model: new Backbone.Model({lnk: '#backup', img: 'backup', name: 'Backup'})})
+		new MainCell({model: new Backbone.Model({lnk: '#backup', img: 'backup', name: 'Backup'})}),
+		new MainCell({model: new Backbone.Model({lnk: '#nilson', img: 'gift', name: 'Nilson'})})
 	];
 	schema          = new Schema();
 	appRouter       = new AppRouter();
@@ -191,7 +196,8 @@ var appStart = function () {
 	schema.load(function () {
 		schemaLoaded.resolve();
 	});
-	$.when(qryDone, schemaLoaded, fiscalCell.initializeFiscalMode()).always(function () {
+	window.nilsonModel  = new NilsonModel();
+	$.when(qryDone, schemaLoaded, nilsonModel.isDeviceAlreadySignedUp(), fiscalCell.initializeFiscalMode()).always(function () {
 		if (schema.get('PLU')) {
 			mainScreenCells.unshift(new MainCell({
 				model: new Backbone.Model(
